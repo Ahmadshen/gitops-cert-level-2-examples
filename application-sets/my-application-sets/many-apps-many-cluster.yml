@@ -9,12 +9,12 @@ spec:
         generators:
           # git generator, 'child' #1
           - git:
-              repoURL: https://github.com/codefresh-contrib/gitops-cert-level-2-examples.git
+              repoURL: https://github.com/ahmadshen/gitops-cert-level-2-examples.git
               revision: HEAD
               directories:
                 - path: application-sets/example-apps/*
           # cluster generator, 'child' #2
-          - clusters:
+          - clusters: {}
               # Remove the label selector to choose all clusters
   template:
     metadata:
@@ -22,7 +22,7 @@ spec:
     spec:
       project: 'default'  # Use 'default' project in all clusters
       source:
-        repoURL: https://github.com/codefresh-contrib/gitops-cert-level-2-examples.git
+        repoURL: https://github.com/ahmadshen/gitops-cert-level-2-examples.git
         targetRevision: HEAD
         path: '{{path}}'
       destination:
